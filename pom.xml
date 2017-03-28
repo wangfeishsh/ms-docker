@@ -47,6 +47,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>ms-docker</finalName>
 		<plugins>
 			<plugin>
 				<!--https://github.com/spotify/docker-maven-plugin-->
@@ -57,6 +58,10 @@
 					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
 					<serverId>docker-hub</serverId>
+					<forceTags>true</forceTags>
+					<imageTags>
+						<imageTag>latest</imageTag>
+					</imageTags>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
