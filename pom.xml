@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<docker.image.prefix>baochunyu1987</docker.image.prefix>
+		<docker.image.prefix>ypp</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -53,11 +53,12 @@
 				<!--https://github.com/spotify/docker-maven-plugin-->
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.11</version>
+				<version>0.4.13</version>
 				<configuration>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<registryUrl>http://10.168.9.114</registryUrl>
+					<imageName>10.168.9.114:80/${docker.image.prefix}/${project.artifactId}</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
-					<serverId>docker-hub</serverId>
+					<serverId>ypp-docker</serverId>
 					<forceTags>true</forceTags>
 					<imageTags>
 						<imageTag>latest</imageTag>
